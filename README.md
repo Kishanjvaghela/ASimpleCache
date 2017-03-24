@@ -35,3 +35,6 @@ ACache mCache = ACache.get(this);
 String value = mCache.getAsString("test_key1");
 ```
 For more examples see Demo 
+
+#Note
+This libary is forked from yangfuhai/ASimpleCache
