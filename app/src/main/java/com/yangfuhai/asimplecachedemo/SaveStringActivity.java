@@ -21,8 +21,8 @@ import org.afinal.simplecache.ACache;
  */
 public class SaveStringActivity extends Activity {
 
-	private EditText mEt_string_input;
-	private TextView mTv_string_res;
+	private EditText mInputEditText;
+	private TextView mResTextView;
 
 	private ACache mCache;
 
@@ -40,8 +40,8 @@ public class SaveStringActivity extends Activity {
 	 * 初始化控件
 	 */
 	private void initView() {
-		mEt_string_input = (EditText) findViewById(R.id.et_string_input);
-		mTv_string_res = (TextView) findViewById(R.id.tv_string_res);
+		mInputEditText = (EditText) findViewById(R.id.et_string_input);
+		mResTextView = (TextView) findViewById(R.id.tv_string_res);
 	}
 
 	/**
@@ -50,13 +50,13 @@ public class SaveStringActivity extends Activity {
 	 * @param v
 	 */
 	public void save(View v) {
-		if (mEt_string_input.getText().toString().trim().length() == 0) {
+		if (mInputEditText.getText().toString().trim().length() == 0) {
 			Toast.makeText(
 					this,
 					"Cuz u input is a nullcharacter ... So , when u press \"read\" , if do not show any result , plz don't be surprise",
 					Toast.LENGTH_SHORT).show();
 		}
-		mCache.put("testString", mEt_string_input.getText().toString());
+		mCache.put("testString", mInputEditText.getText().toString());
 	}
 
 	/**
@@ -69,10 +69,10 @@ public class SaveStringActivity extends Activity {
 		if (testString == null) {
 			Toast.makeText(this, "String cache is null ...", Toast.LENGTH_SHORT)
 					.show();
-			mTv_string_res.setText(null);
+			mResTextView.setText(null);
 			return;
 		}
-		mTv_string_res.setText(testString);
+		mResTextView.setText(testString);
 	}
 
 	/**

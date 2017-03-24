@@ -12,8 +12,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="source:\n
-        http://github.com/yangfuhai/ASimpleCache \n
-author:\n
-        michael Yang       " />
+        https://github.com/Kishanjvaghela/ASimpleCache\n
+        Kishan Vaghela" />
 
 </LinearLayout>

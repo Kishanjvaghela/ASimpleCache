@@ -22,7 +22,7 @@ import org.json.JSONObject;
  */
 public class SaveJsonObjectActivity extends Activity {
 
-	private TextView mTv_jsonobject_original, mTv_jsonobject_res;
+	private TextView mOriginalTextView, mResTextView;
 	private JSONObject jsonObject;
 
 	private ACache mCache;
@@ -42,15 +42,15 @@ public class SaveJsonObjectActivity extends Activity {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		mTv_jsonobject_original.setText(jsonObject.toString());
+		mOriginalTextView.setText(jsonObject.toString());
 	}
 
 	/**
 	 * 初始化控件
 	 */
 	private void initView() {
-		mTv_jsonobject_original = (TextView) findViewById(R.id.tv_jsonobject_original);
-		mTv_jsonobject_res = (TextView) findViewById(R.id.tv_jsonobject_res);
+		mOriginalTextView = (TextView) findViewById(R.id.tv_jsonobject_original);
+		mResTextView = (TextView) findViewById(R.id.tv_jsonobject_res);
 	}
 
 	/**
@@ -72,10 +72,10 @@ public class SaveJsonObjectActivity extends Activity {
 		if (testJsonObject == null) {
 			Toast.makeText(this, "JSONObject cache is null ...",
 					Toast.LENGTH_SHORT).show();
-			mTv_jsonobject_res.setText(null);
+			mResTextView.setText(null);
 			return;
 		}
-		mTv_jsonobject_res.setText(testJsonObject.toString());
+		mResTextView.setText(testJsonObject.toString());
 	}
 
 	/**

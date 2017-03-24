@@ -23,7 +23,7 @@ import org.afinal.simplecache.ACache;
  */
 public class SaveBitmapActivity extends Activity {
 
-	private ImageView mIv_bitmap_res;
+	private ImageView mIvBitmapRes;
 
 	private ACache mCache;
 
@@ -41,7 +41,7 @@ public class SaveBitmapActivity extends Activity {
 	 * 初始化控件
 	 */
 	private void initView() {
-		mIv_bitmap_res = (ImageView) findViewById(R.id.iv_bitmap_res);
+		mIvBitmapRes = (ImageView) findViewById(R.id.iv_bitmap_res);
 	}
 
 	/**
@@ -65,10 +65,10 @@ public class SaveBitmapActivity extends Activity {
 		if (testBitmap == null) {
 			Toast.makeText(this, "Bitmap cache is null ...", Toast.LENGTH_SHORT)
 					.show();
-			mIv_bitmap_res.setImageBitmap(null);
+			mIvBitmapRes.setImageBitmap(null);
 			return;
 		}
-		mIv_bitmap_res.setImageBitmap(testBitmap);
+		mIvBitmapRes.setImageBitmap(testBitmap);
 	}
 
 	/**

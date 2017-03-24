@@ -22,7 +22,7 @@ import org.afinal.simplecache.ACache;
  */
 public class SaveDrawableActivity extends Activity {
 
-	private ImageView mIv_drawable_res;
+	private ImageView mIvDrawableRes;
 
 	private ACache mCache;
 
@@ -40,7 +40,7 @@ public class SaveDrawableActivity extends Activity {
 	 * 初始化控件
 	 */
 	private void initView() {
-		mIv_drawable_res = (ImageView) findViewById(R.id.iv_drawable_res);
+		mIvDrawableRes = (ImageView) findViewById(R.id.iv_drawable_res);
 	}
 
 	/**
@@ -64,10 +64,10 @@ public class SaveDrawableActivity extends Activity {
 		if (testDrawable == null) {
 			Toast.makeText(this, "Drawable cache is null ...",
 					Toast.LENGTH_SHORT).show();
-			mIv_drawable_res.setImageDrawable(null);
+			mIvDrawableRes.setImageDrawable(null);
 			return;
 		}
-		mIv_drawable_res.setImageDrawable(testDrawable);
+		mIvDrawableRes.setImageDrawable(testDrawable);
 	}
 
 	/**

@@ -23,7 +23,7 @@ import java.util.List;
  */
 public class SaveObjectListActivity extends Activity {
 
-    private TextView mTv_object_original, mTv_object_res;
+    private TextView mOriginalTextView, mResTextView;
     private List<UserBean> userBeanList = new ArrayList<>();
 
     private ACache mCache;
@@ -45,15 +45,15 @@ public class SaveObjectListActivity extends Activity {
         userBean2.setAge("25");
         userBean2.setName("Test");
         userBeanList.add(userBean2);
-        displayValue(mTv_object_original, userBeanList);
+        displayValue(mOriginalTextView, userBeanList);
     }
 
     /**
      * 初始化控件
      */
     private void initView() {
-        mTv_object_original = (TextView) findViewById(R.id.tv_object_original);
-        mTv_object_res = (TextView) findViewById(R.id.tv_object_res);
+        mOriginalTextView = (TextView) findViewById(R.id.tv_object_original);
+        mResTextView = (TextView) findViewById(R.id.tv_object_res);
     }
 
     /**
@@ -75,10 +75,10 @@ public class SaveObjectListActivity extends Activity {
         if (testObject == null) {
             Toast.makeText(this, "Object cache is null ...", Toast.LENGTH_SHORT)
                     .show();
-            mTv_object_res.setText(null);
+            mResTextView.setText(null);
             return;
         }
-        displayValue(mTv_object_res, testObject);
+        displayValue(mResTextView, testObject);
     }
 
     private void displayValue(TextView textView, List<UserBean> testObject) {

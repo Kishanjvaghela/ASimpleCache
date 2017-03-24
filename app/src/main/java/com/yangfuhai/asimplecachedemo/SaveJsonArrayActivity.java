@@ -12,18 +12,18 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * 
+ *
  * @ClassName: SaveJsonArrayActivity
  * @Description: 缓存jsonarray
  * @Author Yoson Hao
  * @WebSite www.haoyuexing.cn
  * @Email haoyuexing@gmail.com
  * @Date 2013-8-8 下午1:54:19
- * 
+ *
  */
 public class SaveJsonArrayActivity extends Activity {
 
-	private TextView mTv_jsonarray_original, mTv_jsonarray_res;
+	private TextView mOriginalTextView, mResTextView;
 	private JSONArray jsonArray;
 
 	private ACache mCache;
@@ -57,20 +57,20 @@ public class SaveJsonArrayActivity extends Activity {
 		jsonArray.put(yosonJsonObject);
 		jsonArray.put(michaelJsonObject);
 
-		mTv_jsonarray_original.setText(jsonArray.toString());
+		mOriginalTextView.setText(jsonArray.toString());
 	}
 
 	/**
 	 * 初始化控件
 	 */
 	private void initView() {
-		mTv_jsonarray_original = (TextView) findViewById(R.id.tv_jsonarray_original);
-		mTv_jsonarray_res = (TextView) findViewById(R.id.tv_jsonarray_res);
+		mOriginalTextView = (TextView) findViewById(R.id.tv_jsonarray_original);
+		mResTextView = (TextView) findViewById(R.id.tv_jsonarray_res);
 	}
 
 	/**
 	 * 点击save事件
-	 * 
+	 *
 	 * @param v
 	 */
 	public void save(View v) {
@@ -79,7 +79,7 @@ public class SaveJsonArrayActivity extends Activity {
 
 	/**
 	 * 点击read事件
-	 * 
+	 *
 	 * @param v
 	 */
 	public void read(View v) {
@@ -87,15 +87,15 @@ public class SaveJsonArrayActivity extends Activity {
 		if (testJsonArray == null) {
 			Toast.makeText(this, "JSONArray cache is null ...",
 					Toast.LENGTH_SHORT).show();
-			mTv_jsonarray_res.setText(null);
+			mResTextView.setText(null);
 			return;
 		}
-		mTv_jsonarray_res.setText(testJsonArray.toString());
+		mResTextView.setText(testJsonArray.toString());
 	}
 
 	/**
 	 * 点击clear事件
-	 * 
+	 *
 	 * @param v
 	 */
 	public void clear(View v) {
