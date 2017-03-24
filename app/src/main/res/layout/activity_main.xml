@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView1"
@@ -59,6 +59,13 @@
         android:layout_height="wrap_content"
         android:onClick="object"
         android:text="Object Cache" />
+
+    <Button
+        android:id="@+id/btn_save_object_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="objectList"
+        android:text="Object List Cache" />
 
     <Button
         android:id="@+id/btn_about"

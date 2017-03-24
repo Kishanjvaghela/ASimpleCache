@@ -45,6 +45,7 @@ import java.io.RandomAccessFile;
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -362,6 +363,14 @@ public class ACache {
         put(key, value, -1);
     }
 
+    public void put(String key, List<? extends Serializable> value) {
+        put(key, (Serializable) value, -1);
+    }
+
+    public void put(String key, List<? extends Serializable> value, int saveTime) {
+        put(key, (Serializable) value, saveTime);
+    }
+
     /**
      * 保存 Serializable数据到 缓存中
      *
@@ -406,8 +415,7 @@ public class ACache {
             try {
                 bais = new ByteArrayInputStream(data);
                 ois = new ObjectInputStream(bais);
-                Object reObject = ois.readObject();
-                return reObject;
+                return ois.readObject();
             } catch (Exception e) {
                 e.printStackTrace();
                 return null;
@@ -430,6 +438,20 @@ public class ACache {
 
     }
 
+    /**
+     * get as object list
+     *
+     * @param key key
+     * @return object list if retrieved successfully or null
+     */
+    public <T> List<T> getAsObjectList(String key, Class<T> type) {
+        Object o = getAsObject(key);
+        if (o == null) {
+            return null;
+        } else {
+            return (List<T>) o;
+        }
+    }
     // =======================================
     // ============== bitmap 数据 读写 =============
     // =======================================
@@ -846,6 +868,7 @@ public class ACache {
 
     /**
      * https://github.com/chongxx/ASimpleCache/blob/master/AsimpleCacheDemo/ASimpleCache/org/afinal/simplecache/ACache.java
+     *
      * @param key the file name.
      * @return (InputStream or null) stream previously saved in cache.
      * @throws FileNotFoundException if the file can not be opened
@@ -859,7 +882,8 @@ public class ACache {
 
     /**
      * Cache for a stream
-     *https://github.com/chongxx/ASimpleCache/blob/master/AsimpleCacheDemo/ASimpleCache/org/afinal/simplecache/ACache.java
+     * https://github.com/chongxx/ASimpleCache/blob/master/AsimpleCacheDemo/ASimpleCache/org/afinal/simplecache/ACache.java
+     *
      * @param key the file name.
      * @return OutputStream stream for writing data.
      * @throws FileNotFoundException if the file can not be created.

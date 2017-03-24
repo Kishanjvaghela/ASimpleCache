@@ -23,6 +23,7 @@
         <activity android:name="com.yangfuhai.asimplecachedemo.SaveBitmapActivity" />
         <activity android:name="com.yangfuhai.asimplecachedemo.SaveJsonObjectActivity" />
         <activity android:name="com.yangfuhai.asimplecachedemo.SaveObjectActivity" />
+        <activity android:name="com.yangfuhai.asimplecachedemo.SaveObjectListActivity" />
         <activity android:name="com.yangfuhai.asimplecachedemo.SaveStringActivity" />
         <activity android:name="com.yangfuhai.asimplecachedemo.SaveMediaActivity" />
         <activity

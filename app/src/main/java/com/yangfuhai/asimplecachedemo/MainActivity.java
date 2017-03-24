@@ -55,4 +55,7 @@ public class MainActivity extends Activity {
 		startActivity(new Intent().setClass(this, AboutActivity.class));
 	}
 
+	public void objectList(View view) {
+		startActivity(new Intent().setClass(this, SaveObjectListActivity.class));
+	}
 }
