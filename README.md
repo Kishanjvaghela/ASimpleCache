@@ -1,4 +1,5 @@
 # ASimpleCache
+[ ![Download](https://api.bintray.com/packages/kishanvaghela/maven/a-simple-cache/images/download.svg) ](https://bintray.com/kishanvaghela/maven/a-simple-cache/_latestVersion)
 
 ASimpleCache is a lightweight open source cache framework for android.
 
@@ -18,6 +19,17 @@ ASimpleCache is a lightweight open source cache framework for android.
 
 
 ### 3. How to use?
+Add to global gradle
+```gradle
+maven {
+       url 'https://dl.bintray.com/kishanvaghela/maven/'
+   }
+```
+Add to app gradle
+```gradle
+compile 'org.afinal.simplecache:a-simple-cache:1.0'
+```
+
 Save Data
 ```java
 ACache mCache = ACache.get(this);
