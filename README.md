@@ -48,5 +48,10 @@ String value = mCache.getAsString("test_key1");
 ```
 For more examples see Demo 
 
+# Change note
+### v1.0
+- Add support for Serialized java object list
+
+
 # Note
 This libary is forked from [yangfuhai/ASimpleCache](https://github.com/yangfuhai/ASimpleCache)
