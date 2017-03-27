@@ -1,0 +1,7 @@
+siteUrl = https://github.com/Kishanjvaghela/ASimpleCache
+gitUrl = https://github.com/Kishanjvaghela/ASimpleCache
+version = 1.0
+groupId = org.afinal.simplecache
+licenses = ['Apache-2.0']
+id = a-simple-cache
+name = a-simple-cache
